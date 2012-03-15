@@ -4,85 +4,151 @@
   <meta charset='utf-8'>
 
   <title>posabsolute/releasenotes @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #25f534;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ <script>
+  	$(document).ready(function() {
+			$.ajax({
+  url: "http://documentup.com/compiled",
+  dataType: "jsonp",
+  data: {
+    content: $("#marked").html(),
+    name: "Release Notes"
+  },
+  success: function(resp){
+    // `status` is always provided
+    if (resp.status == 200) {
+      // Write to your document
+      document.open();
+      document.write(resp.html);
+      document.close();
     }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #da0acb; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #da0acb; }
-    h3 { text-align: center; color: #da0acb; }
-    a { color: #da0acb; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
+  }
+});
+		});
+	</script>
 
 <body>
-  <a href="https://github.com/posabsolute/releasenotes"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  <div id="marked"># Release notes plugin & website from github milestones
 
-  <div id="container">
+Lets be real, creating release notes by hand is tedious, this jQuery plugin create a website from your github milestones repository.  It comes with a nice one page website, but you can also integrate this plugin in any website.
 
-    <div class="download">
-      <a href="https://github.com/posabsolute/releasenotes/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/posabsolute/releasenotes/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
+It's also a nice middleground where you can show what your team is doing without having to give github access to all your company.
 
-    <h1><a href="https://github.com/posabsolute/releasenotes">releasenotes</a>
-      <span class="small">by <a href="https://github.com/posabsolute">posabsolute</a></span></h1>
+It support public and private repos.  
 
-    <div class="description">
-      Automatic release notes from Github milestones
-    </div>
 
+## Options
+
+By default the plugin will show the 10 last milestones, it also use jsonp for fetching the data from github, this is perfect for  public repos.
+
+  		$("#releaseNotesContainer").releaseNotes({
+				milestonesShown			: 10,
+				// If you want to show private repo
+				// You need to add repo credentials in api.php
+				phpApi 				: true,
+					phpApiPath		: '/',
+				showDescription 			: true,
+				showComments 			: true,
+				// Used if phpAPI is false
+	     			repo		            		: 'rails',
+	     			username       			: 'rails'
+			});
+
+### milestonesShown (int)
+
+The number of milestone the plugin will show.
+
+### phpApi (boolean)
+
+If set to true, the release notes will be fetch in php, perfect for private repos.
+
+### phpApiPath (string) (required only if phpApi is set to true)
+
+Path to the api.php file, without the good path and the phpApi option active the plugin will fail.
+
+### showDescription (boolean)
+
+Show an issue complete description when you click on it.
+
+### showComments (boolean)
+
+When an issue description is shown, if this issue has comments, a Show Comments button will appear enabling the users to see this issue comments.
+
+### repo (string)
+
+Your github repo name, the plugin will fetch data from this repository.
+
+### username (string)
+
+The github username that is attached to your repo.
+
+
+
+## Integration in other websites
+
+You want to integrate this plugin in your website, no problem. First you need to add to your document head a couple of js and one css file. This plugin has 2 javascript dependencies, marked.js and jQuery.
+
+Include Depencies & the plugin
+
+	<script src="jquery/1.4.4/jquery.js" type="text/javascript"></script>
+	<script src="js/libs/marked.js"></script>
+	<script src="js/releasenotes.js"></script>
+
+Next include the plugin stylesheet
+
+	<link rel="stylesheet" href="css/releasenotes.plugin.css">
+
+Finally extenciate and define your options in the document.ready. 
+
+	<script>
+		$(document).ready(function() {
+			$("#releaseNotesContainer").releaseNotes({
+				milestonesShown			: 10,
+				// If you want to show private repo
+				// You need to add repo credentials in api.php
+				phpApi 				: true,
+					phpApiPath		: '/',
+				showDescription 			: true,
+				showComments 			: true,
+				// Used if phpAPI is false
+	     			repo		            		: 'rails',
+	     			username       			: 'rails'
+			});
+		});
+	</script>
+
+In this example releaseNotesContainer is the div id where the plugin will be created.
+
+## Private Repository
+
+To show release notes from a private repo, first you need to set your phpApi option to true, and to set the good phpApiPath path.
+
+Next, open api.php, there is a variable $config at the top where you will need to put your github credential.
+
+$configs = array(
+    "username" => "posabsolute",  // Github user
+    "password" => "tamere12",	// Github user password
+    "repo"     => "knoters-app"	// Github Repositoty
+);
+
+Since we use a bridge to get the github data, your credential will never be expose to your users.
+
+
+## Limitation
+
+The plugin works on 
+Firefox 3.6+,
+Safari,
+Chrome,
+IE7+
+
+
+## Copyright
+
+Copyright(c) 2011 [Cedric Dugas](https://github.com/posabsolute) [http://www.position-absolute.com](http://www.position-absolute.com)
+</div>
     
 
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>Cedric Dugas (cedric_dugas@hotmail.com)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Cedric Dugas (cedric_dugas@hotmail.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/posabsolute/releasenotes/zipball/master">zip</a> or
-      <a href="https://github.com/posabsolute/releasenotes/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/posabsolute/releasenotes</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/posabsolute/releasenotes">posabsolute/releasenotes</a>
-    </div>
-
-  </div>
 
 </body>
 </html>
