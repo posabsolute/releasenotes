@@ -28,24 +28,28 @@
 	</script>
 
 <body>
-  <div id="marked"># Release notes plugin & website from github milestones
+  <div style="display:none;" id="marked">
+# Automatic Release notes plugin & website using GitHub milestones
 
-Lets be real, creating release notes by hand is tedious, this jQuery plugin create a website from your github milestones repository.  It comes with a nice one page website, but you can also integrate this plugin in any website.
+Lets be real, creating release notes by hand is tedious, this jQuery plugin create release notes automatically from your github milestones repository.  It comes with a nice one page layout, but you can also integrate it in any website.
 
-It's also a nice middleground where you can show what your team is doing without having to give github access to all your company.
+It's a nice middleground where you can show what your team is doing without having to give github access to all your company.
 
-It support public and private repos.  
+It support public and private repositories.  
+
+* Since this plugin use ajax funcionalities, to view the demo your code need to be on a web server.
+** The documentation is also available online at : http://posabsolute.github.com/releasenotes/
 
 
 ## Options
 
-By default the plugin will show the 10 last milestones, it also use jsonp for fetching the data from github, this is perfect for  public repos.
+By default your last 10 milestones will ne shown. It use jsonp for fetching the data from github, this is perfect for  public repos.
 
-  		$("#releaseNotesContainer").releaseNotes({
+			$("#releaseNotesContainer").releaseNotes({
 				milestonesShown			: 10,
 				// If you want to show private repo
 				// You need to add repo credentials in api.php
-				phpApi 				: true,
+				phpApi 				: false,
 					phpApiPath		: '/',
 				showDescription 			: true,
 				showComments 			: true,
@@ -125,11 +129,11 @@ To show release notes from a private repo, first you need to set your phpApi opt
 
 Next, open api.php, there is a variable $config at the top where you will need to put your github credential.
 
-$configs = array(
-    "username" => "posabsolute",  // Github user
-    "password" => "tamere12",	// Github user password
-    "repo"     => "knoters-app"	// Github Repositoty
-);
+	$configs = array(
+	    "username" => "posabsolute",  // Github user
+	    "password" => "tamere12",	// Github user password
+	    "repo"     => "knoters-app"	// Github Repositoty
+	);
 
 Since we use a bridge to get the github data, your credential will never be expose to your users.
 
@@ -146,6 +150,7 @@ IE7+
 ## Copyright
 
 Copyright(c) 2011 [Cedric Dugas](https://github.com/posabsolute) [http://www.position-absolute.com](http://www.position-absolute.com)
+
 </div>
     
 
