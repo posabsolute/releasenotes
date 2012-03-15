@@ -1,3 +1,9 @@
+/*
+*	Copyright, Cedric Dugas,
+*	Do not sell or redistribute
+*/
+
+
 (function($)
 {
 	// mardown parser options, do not touch
