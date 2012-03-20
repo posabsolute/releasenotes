@@ -5,9 +5,9 @@ header('Content-type: application/json');
 
 // Add your secret repo and credential here
 $configs = array(
-    "username" => "posabsolute",	// Github user
-    "password" => "tamere12",	// Github user password
-    "repo"     => "knoters-app"	// Github Repositoty
+    "username" => "user",	   // Github user
+    "password" => "password",   // Github user password
+    "repo"     => "repository"	   // Github Repository
 );
 
 
