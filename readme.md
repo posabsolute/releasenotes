@@ -1,31 +1,33 @@
 # Automatic Release notes plugin & website using GitHub milestones
 
-Lets be real, creating release notes by hand is tedious, this jQuery plugin create release notes automatically from your github milestones repository.  It comes with a nice one page layout, but you can also integrate it in any website.
+Lets be real, creating release notes by hand is tedious, this jQuery plugin creates release notes automatically from your github milestones repository.  It comes with a nice onepage layout, but you can also integrate it in any website.
 
 It's a nice middleground where you can show what your team is doing without having to give github access to all your company.
 
-It support public and private repositories.  
+It supports public and private repositories.  
 
-* Since this plugin use ajax funcionalities, to view the demo your code need to be on a web server.
+* Since this plugin uses ajax functionalities, to view the demo your code needs to be on a web server.
 ** The documentation is also available online at : http://posabsolute.github.com/releasenotes/
 
 
 ## Options
 
-By default your last 10 milestones will ne shown. It use jsonp for fetching the data from github, this is perfect for  public repos.
+By default your last 10 milestones will be shown. It uses jsonp for fetching the data from github, this is perfect for public repos.
 
+		$(document).ready(function() {
 			$("#releaseNotesContainer").releaseNotes({
 				milestonesShown			: 10,
 				// If you want to show private repo
 				// You need to add repo credentials in api.php
-				phpApi 				: false,
+				phpApi				: true,
 					phpApiPath		: '/',
-				showDescription 			: true,
-				showComments 			: true,
+				showDescription			: true,
+				showComments			: true,
 				// Used if phpAPI is false
-	     			repo		            		: 'rails',
-	     			username       			: 'rails'
+	     			repo					: 'rails',
+	     			username				: 'rails'
 			});
+		});
 
 ### milestonesShown (int)
 
@@ -79,13 +81,13 @@ Finally extenciate and define your options in the document.ready.
 				milestonesShown			: 10,
 				// If you want to show private repo
 				// You need to add repo credentials in api.php
-				phpApi 				: true,
+				phpApi				: true,
 					phpApiPath		: '/',
-				showDescription 			: true,
-				showComments 			: true,
+				showDescription			: true,
+				showComments			: true,
 				// Used if phpAPI is false
-	     			repo		            		: 'rails',
-	     			username       			: 'rails'
+	     			repo					: 'rails',
+	     			username				: 'rails'
 			});
 		});
 	</script>
@@ -96,7 +98,7 @@ In this example releaseNotesContainer is the div id where the plugin will be cre
 
 To show release notes from a private repo, first you need to set your phpApi option to true, and to set the good phpApiPath path.
 
-Next, open api.php, there is a variable $config at the top where you will need to put your github credential.
+Next, open api.php, there is a variable $config at the top where you will need to put your github credentials.
 
 	$configs = array(
 	    "username" => "posabsolute",  // Github user
@@ -104,10 +106,10 @@ Next, open api.php, there is a variable $config at the top where you will need t
 	    "repo"     => "knoters-app"	// Github Repositoty
 	);
 
-Since we use a bridge to get the github data, your credential will never be expose to your users.
+Since we use a bridge to get the github data, your credentials will never be exposed to your users.
 
 
-## Limitation
+## Limitations
 
 The plugin works on 
 Firefox 3.6+,
