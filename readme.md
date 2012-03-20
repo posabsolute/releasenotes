@@ -108,9 +108,9 @@ To show release notes from a private repo, first you need to set your phpApi opt
 Next, open api.php, there is a variable $config at the top where you will need to put your github credentials.
 
 	$configs = array(
-	    "username" => "posabsolute",  // Github user
-	    "password" => "tamere12",	// Github user password
-	    "repo"     => "knoters-app"	// Github Repositoty
+	    "username" => "username",  // Github user
+	    "password" => "password",	// Github user password
+	    "repo"     => "repo"	// Github Repositoty
 	);
 
 Since we use a bridge to get the github data, your credentials will never be exposed to your users.
