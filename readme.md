@@ -7,7 +7,6 @@ Lets be real, creating release notes by hand is tedious, this jQuery plugin crea
 
 It's a nice middleground where you can show what your team is doing without having to give github access to all your company.
 
-It supports public and private repositories.  
 
 * Since this plugin uses ajax functionalities, to view the demo your code needs to be on a web server.
 ** The documentation is also available online at : http://posabsolute.github.com/releasenotes/
