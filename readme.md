@@ -5,7 +5,7 @@ Lets be real, creating release notes by hand is tedious, this jQuery plugin crea
 
 ![Screenshot](http://www.position-absolute.com/big_ad.png)
 
-It's a nice middleground where you can show what your team is doing without having to give github access to all your company.
+It's a nice middleground where you can show what your team is doing without having to give github access to all your company. You can see an implemented  [example here](http://release.weddingdeck.com).
 
 
 * Since this plugin uses ajax functionalities, to view the demo your code needs to be on a web server.
