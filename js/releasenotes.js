@@ -43,9 +43,12 @@
 					action: "milestones",
 					sort:"due_date"
 				});
+
 			 	this.callApi(options).success(function(resp){
 			 		if(resp.data) resp= resp.data;
 			 		_this.showMilestones(resp);
+			 	}).error(function(resp){
+			 		console.log(resp)
 			 	});
 			},
 			loadEvents : function(){
@@ -162,6 +165,7 @@
 				return 0;
 			  },
 			callApi: function(options){
+				if(options.repo) delete options.repo;
 				return $.ajax({
 					url:this.urls[options.action](options),
 					dataType:respType,
