@@ -135,14 +135,15 @@ p.dateRelease{margin:0 0 10px 0; font-size:14px;}
 	}
 	.milestoneContainer .label{
 	    display:inline-block;
-	    font-weight:bold;
+	    font-family: arial;
+	    font-weight:normal;
 	    line-height: 13px;
 	    color: white;
 	    vertical-align: middle;
 	    white-space: nowrap;
-	    font-size:11px;
+	    font-size:12px;
 	    color:#fff;
-	    text-shadow: 1px 1px 0 #444;
+	    text-shadow: 1px 1px 1 #000;
 	    padding:3px 4px;
 	    border-radius:5px;
 	    margin-top: -6px;

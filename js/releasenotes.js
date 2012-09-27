@@ -96,7 +96,7 @@
 				$(el).fadeOut().slideUp();
 
 				var options = $.extend(settings, {
-					id:issueid,
+					issueid:issueid,
 					action:"comments"
 				});
 				
@@ -191,7 +191,7 @@
 				},
 				comments : function(options){
 					if(!settings.phpApi){
-						return $url = this.domainName+"/repos/"+ settings.username +"/"+ settings.repo+"/issues/"+ options.id +"/comments";
+						return $url = this.domainName+"/repos/"+ settings.username +"/"+ settings.repo+"/issues/"+ options.issueid +"/comments";
 					}else{
 						return apiPath;
 					}

@@ -30,7 +30,7 @@ class Api{
         return self::callApiGET($url, $configs);
     }
      function comments($configs){
-        $url = "/repos/". $configs["username"] ."/". $configs["repo"] ."/issues/". $_GET["id"] . "/comments";
+        $url = "/repos/". $configs["username"] ."/". $configs["repo"] ."/issues/". $_GET["issueid"] . "/comments";
         return self::callApiGET($url, $configs);
     }
 
