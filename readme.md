@@ -14,6 +14,8 @@ It's a nice middleground where you can show what your team is doing without havi
 *** If you use this plugin in production please consider *[buying me a good pint of beer!!](http://www.position-absolute.com/?p=3992)*
 Donate button is at the bottom of the page
 
+[![endorse](http://api.coderwall.com/posabsolute/endorsecount.png)](http://coderwall.com/posabsolute)
+
 
 
 ## Options
