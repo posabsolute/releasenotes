@@ -1,6 +1,6 @@
 # Automatic Release notes plugin & website using GitHub milestones
 
-Lets be real, creating release notes by hand is tedious, this jQuery plugin creates release notes automatically from your github milestones repository.  It comes with a nice onepage layout, but you can also integrate it in any website.
+Lets be real, creating release notes by hand is tedious, this jQuery plugin creates release notes automatically from your github milestones repository.  It comes with a nice onepage layout, but you can also integrate it in any website. It also integrates issues, labels & comments
 
 
 ![Screenshot](http://www.position-absolute.com/big_ad.png)
