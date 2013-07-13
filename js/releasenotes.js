@@ -256,7 +256,7 @@
 				  <div class="cmeta">\
 				    <p class="author">\
 				        <span class="icon"></span>\
-				      <strong class="author"><a href="'+data.user.url+'">'+data.user.login+'</a></strong>\
+				      <strong class="author"><a href="'+data.user.html_url+'">'+data.user.login+'</a></strong>\
 				      <em class="action-text">\
 				        commented\
 				      </em>\
