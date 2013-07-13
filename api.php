@@ -5,9 +5,10 @@ header('Content-type: application/json');
 
 // Add your secret repo and credential here
 $configs = array(
-    "username" => "user",	   // Github user
-    "password" => "password",   // Github user password
-    "repo"     => "repository"	   // Github Repository
+    "username"   => "user",       // Github user
+    "password"   => "password",   // Github user password
+    "repo_owner" => "repo_owner", // Repository owner
+    "repo"       => "repo"        // Github Repository
 );
 
 
@@ -22,22 +23,27 @@ class Api{
     }
 
     function milestones($configs){
-    	$url = "/repos/". $configs["username"] ."/". $configs["repo"] ."/milestones";
-    	return self::callApiGET($url, $configs);
+        return self::getRepoResource($configs, "milestones");
     }
     function issues($configs){
-        $url = "/repos/". $configs["username"] ."/". $configs["repo"] ."/issues";
-        return self::callApiGET($url, $configs);
+        return self::getRepoResource($configs, "issues");
     }
      function comments($configs){
-        $url = "/repos/". $configs["username"] ."/". $configs["repo"] ."/issues/". $_GET["issueid"] . "/comments";
+        return self::getRepoResource($configs, "issues", $_GET["issueid"], "comments");
+    }
+
+    protected function getRepoResource(){
+        $args = func_get_args();
+        $configs = array_shift($args);
+        $pathComponents = $args;
+        array_unshift($pathComponents, 'repos', $configs["repo_owner"], $configs["repo"]);
+        $url = join("/", $pathComponents);
         return self::callApiGET($url, $configs);
     }
 
     protected function callApiGET($url, $configs){
-
         $curl = curl_init();
-        $curlUrl ="https://api.github.com" . $url;
+        $curlUrl ="https://api.github.com/" . $url;
 
         curl_setopt_array($curl, array(
             CURLOPT_URL             =>  $curlUrl. '?' . http_build_query($_GET),
