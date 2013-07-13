@@ -48,6 +48,7 @@ class Api{
         curl_setopt_array($curl, array(
             CURLOPT_URL             =>  $curlUrl. '?' . http_build_query($_GET),
             CURLOPT_RETURNTRANSFER  => true,
+            CURLOPT_SSL_VERIFYPEER  => false,
             CURLOPT_USERPWD			=> $configs["username"] . ":" . $configs["password"]
         ));     
         $response = curl_exec($curl);
