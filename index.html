@@ -1,13 +1,321 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <script>
-    this.DocumentUp={},DocumentUp.document=function(a){var b;"string"==typeof a?(b=a,a=null):(b=a.repo,delete a.repo),window.callback=function(b){b.status===200&&(document.open(),document.write(b.html),document.close(),a&&a.afterRender&&typeof a.afterRender=="function"&&a.afterRender())};var c=document.createElement("script");c.src="http://documentup.com/"+b,a?c.src+="?config="+encodeURIComponent(JSON.stringify(a))+"&callback=callback":c.src+="?callback=callback",document.getElementsByTagName("head")[0].appendChild(c)}
-    </script>
-    <script>
-      DocumentUp.document("posabsolute/releasenotes");
-    </script>
-  </head>
-  <body></body>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+	<!-- Basic
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Scrum Release Notes for Atlassian Jira Cloud</title>
+	<meta name="description" content="Scrum Release Notes for Atlassian Jira Cloud">
+	<meta name="keywords" content="jira, atlassian, release notes, scrum, agile">
+	<meta name="author" content="Cedric Dugas">
+	<meta name="apple-itunes-app" content="app-id=1091861354">
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/skeleton.css">
+	<link rel="stylesheet" href="./css/flexslider.css">
+	<link rel="stylesheet" href="./css/magnific-popup.css">
+	<link rel="stylesheet" href="./css/rome.css">
+	<link rel="stylesheet" href="./css/layout.css">
+	<link rel="stylesheet" href="./css/devices.css">
+	<link rel="stylesheet" href="./css/animate.css">
+
+	<!-- Fonts
+  ================================================== -->
+	<link href='./fonts/Montserrat/Montserrat.css' rel='stylesheet' type='text/css'>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="./img/favicons/favicon.ico">
+	<link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./img/favicons/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+
+
+		<!-- section -->
+		<section class="home fullscreen" id="home">
+
+			<div class="background fullscreen">
+
+				<div class="overlay">
+
+					<!-- container -->
+					<div class="container clearfix fullscreen">
+
+						<div class="phone eight columns">
+
+							<div class="preview">
+								<img src="img/1.png" alt="">
+							</div>
+
+						</div>
+
+						<div class="info eight columns">
+							
+							<div class="logo">Jira Release Notes App</div>
+
+							<div class="welcome">Jira UI pains you? Stay up to date with your scrum development teams on the go.</div>
+
+							<div class="download">
+								<ul class="cross">
+									<li class="ios" data-title="iPhone" data-url="https://geo.itunes.apple.com/us/app/jira-scrum-release-notes/id1091861354?mt=8"></li>
+									<li class="android" data-title="Android" data-url="https://play.google.com/store/apps/details?id=com.cedricdugas.releasenotes"></li>
+								</ul>
+
+							</div>
+
+						</div>
+
+					</div>
+					<!-- container -->
+
+					<div class="more"></div>
+				
+				</div>
+
+			</div>
+
+		</section>
+		<!-- section -->
+
+
+		<!-- section -->
+		<section class="about" id="about">
+
+			<div class="story offset">
+
+				<!-- container -->
+				<div class="container clearfix">
+
+					<div class="sixteen columns">
+
+						<div class="title">About Scrum Release Notes</div>
+
+						<div class="devider"></div>
+
+						<p class="text">Your company uses Jira Atlassian every day to manage software development with the Agile Scrum process.You are an executive, a product manager, a scrum master or anyone that wants to stay up to date with your projects progress on the go with a simple UI. This app is for you.</p>
+
+<p class="text">Look at all your projects closed sprints, burndown chart, team velocity, search for specific issues and add comments.</p>
+
+<p class="text">The Scrum Release Notes app is the easy way to stay inform on how your Scrum projects are doing.</p>
+
+
+					</div>
+
+				</div>
+				<!-- container -->
+
+			</div>
+		</section>
+		<!-- section -->
+
+
+		<!-- section -->
+		<section class="features" id="features">
+
+			<div class="main offset">
+
+				<!-- container -->
+				<div class="container clearfix">
+
+					<div class="sixteen columns">
+
+						<div class="title">App Features</div>
+						<div class="devider"></div>
+
+					</div>
+
+				</div>
+				<!-- container -->
+
+				<!-- container -->
+				<div class="container">
+					
+					<div class="feature one-third column">
+
+						<div class="icon"><img src="img/velo.png"></div>
+						<div class="title">Project Velocity</div>
+						<p class="text">Measure how much work is getting done on your project over sprints</p>
+
+					</div>
+
+					<div class="feature one-third column">
+
+						<div class="icon"><img src="img/features/main/2.png"></div>
+						<div class="title">Developers breakdown</div>
+						<p class="text">Have a sense of what each individual contribute to the project per sprint.</p>
+
+					</div>
+
+					<div class="feature one-third column">
+
+						<div class="icon"><img src="img/features/main/3.png"></div>
+						<div class="title">Add comments</div>
+						<p class="text">Read, search stories & bugs, add comments when things are not clear.</p>
+
+					</div>
+
+				</div>
+				<!-- container -->
+
+			</div>
+		<!-- section -->
+
+
+		<!-- section -->
+		<section class="gallery" id="gallery">
+
+			<div class="offset">
+
+				<!-- container -->
+				<div class="container clearfix">
+
+					<div class="sixteen columns">
+
+						<div class="title">Screenshots Gallery</div>
+						<div class="devider"></div>
+
+					</div>
+
+				</div>
+				<!-- container -->
+
+				<!-- container -->
+				<div class="container">
+					
+					<div class="sixteen columns screenshots">
+
+						<ul class="slides">
+
+							<li>
+								<a href="img/1.png" title="Screenshot 1">
+									<img src="./img/1.png" alt="">
+									<div class="view"></div>
+								</a>
+							</li>
+
+							<li>
+								<a href="img/2.png" title="Screenshot 2">
+									<img src="img/2.png" alt="">
+									<div class="view"></div>
+								</a>
+							</li>
+
+							<li>
+								<a href="img/3.png" title="Screenshot 3">
+									<img src="img/3.png" alt="">
+									<div class="view"></div>
+								</a>
+							</li>
+							
+							<li>
+								<a href="img/4.png" title="Screenshot 4">
+									<img src="img/4.png" alt="">
+									<div class="view"></div>
+								</a>
+							</li>
+
+
+						</ul>
+
+					</div>
+
+				</div>
+				<!-- container -->
+
+			</div>
+
+		</section>
+		<!-- section -->
+
+		<!-- section -->
+		<section class="subscribe" id="subscribe">
+
+			<div class="offset">
+
+				<!-- container -->
+				<div class="container">
+
+					<div class="sixteen columns">
+						<div class="title">Stay in touch</div>
+						<div class="subtitle">Feedback? Questions? Send us a quick email at feedback[at]position-absolute.com</div>
+					</div>
+
+				</div> 
+				<!-- container -->
+
+				<!-- container -->
+				<div class="container">
+
+					<div class="devider sixteen columns"></div>
+
+				</div> 
+				<!-- container -->
+
+
+			</div>
+
+		</section>
+		<!-- section -->
+
+
+		<!-- footer -->
+		<footer>
+
+			<div class="offset">
+
+				<!-- container -->
+				<div class="container">
+
+					<div class="sixteen columns">
+						<div class="copyright">Copyright © 2016, <a href="privacy.html">Privacy Policy</a></div>
+					</div>
+					
+				</div> 
+				<!-- container -->
+
+			</div>
+
+		</footer>
+		<!-- footer -->
+
+	</div>
+	<!-- wrapper -->
+
+
+	<div class="loader"></div>
+
+	<!-- javascript -->
+	<script src="./js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="./js/jquery-ui-1.10.4.min.js" type="text/javascript"></script>
+	<script src="./js/jquery.flexslider-min.js" type="text/javascript"></script>
+	<script src="./js/magnific-popup.0.9.9.js" type="text/javascript"></script>
+	<script src="./js/modernizr.js"></script>
+	<script src="./js/waypoints.js" type="text/javascript"></script>
+	<script src="./js/rome.js" type="text/javascript"></script>
+	<!-- javascript -->
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5683e96caae91797"></script>
+
+
+
+</body>
 </html>
